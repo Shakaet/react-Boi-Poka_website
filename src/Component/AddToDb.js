@@ -12,6 +12,17 @@ let getItemFromLs=()=>{
         return []
     }
 }
+let getItemFromLsW=()=>{
+
+    let getStr=localStorage.getItem("WishList")
+    if(getStr){
+        let ConvertArray=JSON.parse(getStr)
+        return ConvertArray
+    }
+    else{
+        return []
+    }
+}
 
 let AddToLocalStorage=(id)=>{
 
@@ -28,6 +39,21 @@ let AddToLocalStorage=(id)=>{
     }
 }
 
+let AddToLocalStorageW=(id)=>{
+
+    let arrayItem=getItemFromLsW()
+    if(arrayItem.includes(id)){
+
+        console.log(id,"Doesnt Exist")
+
+    }
+    else{
+        arrayItem.push(id)
+         let strItem=JSON.stringify(arrayItem)
+         localStorage.setItem("WishList",strItem)
+    }
+}
 
 
-export {AddToLocalStorage}
+
+export {AddToLocalStorage,AddToLocalStorageW,getItemFromLs}

@@ -39,7 +39,7 @@ const NavBar = () => {
             <li><NavLink to={"/"} className='btn btn-outline text-yellow-800 ml-3'>Home</NavLink></li>
             <li>
                 
-                <summary className='btn btn-outline text-yellow-800 ml-3'>Listed Book</summary>
+                <NavLink to={'/listedbook'} className='btn btn-outline text-yellow-800 ml-3'>Listed Book</NavLink>
                
             </li>
             <li className='btn btn-outline text-yellow-800 ml-3'><a>Pages to Read</a></li>

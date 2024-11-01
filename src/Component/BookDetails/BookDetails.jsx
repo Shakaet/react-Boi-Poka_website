@@ -1,7 +1,7 @@
 import { getItem } from 'localforage';
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
-import { AddToLocalStorage } from '../AddToDb';
+import { AddToLocalStorage, AddToLocalStorageW } from '../AddToDb';
 
 
 const BookDetails = () => {
@@ -11,9 +11,7 @@ const BookDetails = () => {
 
     let book = data.find(item => item.bookId === id);
 
-    if (!book) {
-        return <div>Book not found.</div>; // Handle the case where the book is not found
-    }
+    
 
     let { bookId, image } = book;
 
@@ -26,6 +24,13 @@ const BookDetails = () => {
        
     };
 
+    let handleWishList= (id) => {
+        console.log(id)
+         AddToLocalStorageW(id)
+          
+       
+    };
+
     return (
         <div className='flex flex-col justify-center items-center'>
             <h2>Hello Books {bookId}</h2>
@@ -33,7 +38,7 @@ const BookDetails = () => {
             <br />
             <div className='flex gap-5'>
                 <button onClick={() => handleMarkAsRead(bookId)} className='btn btn-outline'>Mark as Read</button>
-                <button className='btn btn-warning ms-5'>Add to WishList</button>
+                <button onClick={()=>handleWishList(bookId)} className='btn btn-warning ms-5'>Add to WishList</button>
             </div>
         </div>
     );
