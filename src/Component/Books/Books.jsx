@@ -1,4 +1,4 @@
-import { data } from 'autoprefixer';
+
 import React, { useEffect, useState } from 'react';
 import Book from '../Book/Book';
 
@@ -7,7 +7,7 @@ const Books = () => {
     let[Books,setBooks]=useState([])
 
     useEffect(()=>{
-        fetch("/public/booksData.json")
+        fetch("/booksData.json")
         .then(res=>res.json())
         .then(data=>setBooks(data))
     },[])

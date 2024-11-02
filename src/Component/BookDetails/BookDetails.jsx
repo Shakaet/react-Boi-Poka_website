@@ -1,4 +1,4 @@
-import { getItem } from 'localforage';
+
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { AddToLocalStorage, AddToLocalStorageW } from '../AddToDb';
