@@ -1,3 +1,4 @@
+import { toast } from "react-toastify"
 
 
 
@@ -36,6 +37,7 @@ let AddToLocalStorage=(id)=>{
         arrayItem.push(id)
          let strItem=JSON.stringify(arrayItem)
          localStorage.setItem("read",strItem)
+         toast("This Book is Added to the Read List")
     }
 }
 

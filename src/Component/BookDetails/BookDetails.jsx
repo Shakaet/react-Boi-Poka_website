@@ -20,6 +20,8 @@ const BookDetails = () => {
     let handleMarkAsRead = (id) => {
         console.log(id)
          AddToLocalStorage(id)
+          // Show success toast
+         
           
        
     };
@@ -33,6 +35,7 @@ const BookDetails = () => {
 
     return (
         <div className='flex flex-col justify-center items-center'>
+      
             <h2>Hello Books {bookId}</h2>
             <img className='w-24 rounded mt-10' src={image} alt={`Book cover of ${bookId}`} /> {/* Added alt attribute for accessibility */}
             <br />
